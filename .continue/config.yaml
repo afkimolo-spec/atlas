@@ -1,0 +1,22 @@
+name: Atlas Local AI
+
+models:
+
+  - name: Atlas Architect
+    provider: openai
+    model: /opt/models/qwen3-coder-30b-a3b-instruct-q4_k_m.gguf
+    apiBase: http://localhost:8002/v1
+
+  - name: Atlas Researcher
+    provider: openai
+    model: /opt/models/qwen2.5-coder-32b-instruct-q2_k.gguf
+    apiBase: http://localhost:8003/v1
+
+  - name: Atlas Fast Coder
+    provider: openai
+    model: /opt/models/qwen2.5-coder-7b-instruct-q8_0.gguf
+    apiBase: http://localhost:8001/v1
+
+context:
+  - provider: code
+  - provider: docs

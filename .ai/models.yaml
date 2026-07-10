@@ -1,0 +1,44 @@
+# Atlas Model Registry
+# Defines available AI models and their intended responsibilities
+
+models:
+
+  architect:
+    name: qwen3-coder-30b-agent
+    provider: llama.cpp
+    endpoint: http://localhost:8002/v1
+    model_id: /opt/models/qwen3-coder-30b-a3b-instruct-q4_k_m.gguf
+    purpose:
+      - architecture
+      - system_design
+      - implementation_planning
+
+  developer:
+    name: qwen3-coder-30b-developer
+    provider: llama.cpp
+    endpoint: http://localhost:8002/v1
+    model_id: /opt/models/qwen3-coder-30b-a3b-instruct-q4_k_m.gguf
+    purpose:
+      - coding
+      - debugging
+      - refactoring
+
+  researcher:
+    name: qwen2.5-coder-32b-researcher
+    provider: llama.cpp
+    endpoint: http://localhost:8003/v1
+    model_id: /opt/models/qwen2.5-coder-32b-instruct-q2_k.gguf
+    purpose:
+      - research
+      - technical_analysis
+      - review
+
+  autocomplete:
+    name: qwen2.5-coder-7b-fast
+    provider: llama.cpp
+    endpoint: http://localhost:8001/v1
+    model_id: /opt/models/qwen2.5-coder-7b-instruct-q8_0.gguf
+    purpose:
+      - autocomplete
+      - quick_questions
+      - lightweight_tasks
