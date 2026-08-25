@@ -1,0 +1,8 @@
+The Atlas .venv is intentionally not copied.
+
+Virtual environments contain machine-specific paths.
+
+Restore with:
+
+    cd ~/workspace/atlas
+    uv sync

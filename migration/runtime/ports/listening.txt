@@ -1,0 +1,20 @@
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                    
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*                                              
+udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*                                              
+udp   UNCONN 0      0          127.0.0.1:323        0.0.0.0:*                                              
+udp   UNCONN 0      0              [::1]:323           [::]:*                                              
+tcp   LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*                                              
+tcp   LISTEN 0      512          0.0.0.0:8001       0.0.0.0:*                                              
+tcp   LISTEN 0      512          0.0.0.0:8000       0.0.0.0:*                                              
+tcp   LISTEN 0      512          0.0.0.0:8003       0.0.0.0:*                                              
+tcp   LISTEN 0      512          0.0.0.0:8002       0.0.0.0:*                                              
+tcp   LISTEN 0      511        127.0.0.1:58223      0.0.0.0:*    users:(("MainThread",pid=8771,fd=44))     
+tcp   LISTEN 0      511        127.0.0.1:40267      0.0.0.0:*    users:(("MainThread",pid=7793,fd=44))     
+tcp   LISTEN 0      128        127.0.0.1:38047      0.0.0.0:*    users:(("code-110a328ea5",pid=4205,fd=11))
+tcp   LISTEN 0      128        127.0.0.1:36775      0.0.0.0:*    users:(("code-fc3def6774",pid=12323,fd=9))
+tcp   LISTEN 0      128        127.0.0.1:33483      0.0.0.0:*    users:(("code-fc3def6774",pid=7562,fd=10))
+tcp   LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*                                              
+tcp   LISTEN 0      128        127.0.0.1:45341      0.0.0.0:*    users:(("code-fc3def6774",pid=7705,fd=11))
+tcp   LISTEN 0      511        127.0.0.1:26058      0.0.0.0:*    users:(("MainThread",pid=7793,fd=54))     
+tcp   LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*                                              
+tcp   LISTEN 0      4096            [::]:22            [::]:*                                              

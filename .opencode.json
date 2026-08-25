@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "atlas": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Atlas Local",
+      "options": {
+        "baseURL": "http://localhost:8002/v1",
+        "apiKey": "atlas-local"
+      },
+      "models": {
+        "qwen3-agent": {
+          "name": "Qwen3 Coder 30B Agent"
+        }
+      }
+    }
+  },
+  "model": "atlas/qwen3-agent",
+  "instructions": [
+    "./AGENTS.md"
+  ]
+}

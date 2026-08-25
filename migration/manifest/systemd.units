@@ -1,0 +1,6 @@
+llama-agent.service
+llama-completion.service
+llama-embed.service
+llama-health.service
+llama-health.timer
+llama-research.service

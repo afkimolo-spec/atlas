@@ -1,0 +1,19 @@
+[Unit]
+Description=Llama Embedding Server
+After=network-online.target
+
+[Service]
+Type=simple
+User=llama
+Group=llama
+ExecStart=/opt/scripts/start-embed.sh
+Restart=always
+RestartSec=5
+LimitNOFILE=65535
+WorkingDirectory=/opt/llama.cpp
+StandardOutput=append:/var/log/llama/embed.log
+StandardError=append:/var/log/llama/embed.log
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target

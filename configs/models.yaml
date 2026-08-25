@@ -1,0 +1,25 @@
+models:
+
+  engineering:
+    provider: local
+    endpoint: http://localhost:8002/v1
+    model: /opt/models/qwen3-coder-30b-a3b-instruct-q4_k_m.gguf
+    purpose: Primary engineering agent
+
+  research:
+    provider: local
+    endpoint: http://localhost:8003/v1
+    model: /opt/models/qwen2.5-coder-32b-instruct-q2_k.gguf
+    purpose: Research, architecture and long-context analysis
+
+  completion:
+    provider: local
+    endpoint: http://localhost:8001/v1
+    model: /opt/models/qwen2.5-coder-7b-instruct-q8_0.gguf
+    purpose: Fast edits, autocomplete and small coding tasks
+
+  embeddings:
+    provider: local
+    endpoint: http://localhost:8000/v1
+    model: /opt/models/nomic-embed-text-v1.5-Q8_0.gguf
+    purpose: Semantic search and memory indexing

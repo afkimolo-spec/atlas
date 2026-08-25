@@ -1,0 +1,15 @@
+ Static hostname: llama
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: cde67e10173a4392baaab1f2f1cfbe34
+         Boot ID: e82c4ce9d446481881d07eea7a8b5122
+  Virtualization: kvm
+Operating System: Ubuntu 26.04 LTS
+          Kernel: Linux 7.0.0-30-generic
+    Architecture: x86-64
+ Hardware Vendor: QEMU
+  Hardware Model: Standard PC _i440FX + PIIX, 1996_
+Hardware Version: pc-i440fx-9.2
+Firmware Version: rel-1.16.3-0-ga6ed6b701f0a-prebuilt.qemu.org
+   Firmware Date: Tue 2014-04-01
+    Firmware Age: 12y 4month 3w 3d

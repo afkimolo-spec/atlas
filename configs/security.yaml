@@ -1,0 +1,19 @@
+security:
+
+  allow_shell: true
+
+  allow_git: true
+
+  allow_file_write: true
+
+  allow_network: false
+
+  require_review_before_commit: true
+
+  block_system_paths:
+
+    - /etc
+    - /usr
+    - /boot
+    - /sys
+    - /proc

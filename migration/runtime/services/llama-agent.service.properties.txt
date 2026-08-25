@@ -1,0 +1,12 @@
+Id=llama-agent.service
+WantedBy=multi-user.target
+LoadState=loaded
+ActiveState=active
+SubState=running
+FragmentPath=/etc/systemd/system/llama-agent.service
+Restart=always
+ExecStart={ path=/opt/scripts/start-agent.sh ; argv[]=/opt/scripts/start-agent.sh ; ignore_errors=no ; start_time=[Mon 2026-08-24 10:17:46 UTC] ; stop_time=[n/a] ; pid=1919 ; code=(null) ; status=0/0 }
+Environment=
+WorkingDirectory=/opt/llama.cpp
+User=llama
+Group=llama

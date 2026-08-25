@@ -1,96 +1,154 @@
-# ======================================================
-# Atlas AI Engineering Platform
-# ======================================================
+# ============================================================
+# Atlas Git Ignore
+# ============================================================
 
-# ------------------------------------------------------
-# Logs
-# ------------------------------------------------------
-
-logs/
-*.log
-
-# ------------------------------------------------------
-# Temporary Files
-# ------------------------------------------------------
-
-temp/
-*.tmp
-*.bak
-*.swp
-
-# ------------------------------------------------------
-# AI Models
-# ------------------------------------------------------
-
-*.gguf
-*.bin
-*.safetensors
-
-models/
-Models/
-
-# ------------------------------------------------------
-# Python
-# ------------------------------------------------------
-
-__pycache__/
-*.pyc
-*.pyo
-.venv/
-venv/
-.python-version
-
-# ------------------------------------------------------
-# Node
-# ------------------------------------------------------
-
-node_modules/
-npm-debug.log*
-pnpm-lock.yaml
-
-# ------------------------------------------------------
-# Build Outputs
-# ------------------------------------------------------
-
-dist/
-build/
-out/
-coverage/
-
-# ------------------------------------------------------
-# IDE
-# ------------------------------------------------------
-
-.vscode/settings.json
-.idea/
-
-# ------------------------------------------------------
-# Continue Runtime
-# ------------------------------------------------------
-
-.continue/cache/
-.continue/index/
-
-# ------------------------------------------------------
-# Environment
-# ------------------------------------------------------
-
+# Secrets / credentials
 .env
 .env.*
-
+!.env.example
 *.pem
 *.key
 *.crt
+*.cer
+*.p12
+*.pfx
+credentials.json
+secrets.json
+*secret*
+*password*
+*token*
 
-# ------------------------------------------------------
-# Operating System
-# ------------------------------------------------------
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+ENV/
 
+# Build / packaging
+build/
+dist/
+*.egg-info/
+*.whl
+*.tar.gz
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Databases / runtime state
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.pid
+*.sock
+
+# AI / ML model artifacts
+*.gguf
+*.ggml
+*.safetensors
+*.bin
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.model
+
+# Vector / embedding artifacts
+*.faiss
+*.index
+*.npy
+*.npz
+*.parquet
+*.arrow
+*.vectors
+*.embeddings
+
+# Local model/cache directories
+models/
+model-cache/
+.cache/
+.huggingface/
+.ollama/
+
+# Docker runtime data
+.docker/
+docker-volumes/
+volumes/
+
+# IDE / editor
+.idea/
+.vscode/
+*.code-workspace
+
+# OS
 .DS_Store
 Thumbs.db
 
-# ------------------------------------------------------
-# Atlas Runtime
-# ------------------------------------------------------
+# Atlas runtime-generated material
+run/
+runtime/
+state/
+sessions/
+*.pid
 
-.cache/
+# Migration temporary/runtime artifacts
+migration/runtime/processes/
+migration/runtime/environment/
+
+# Keep migration documentation/manifests under version control.
+
+# Nested Git repositories inside migration snapshots
+migration/**/.git/
+
+# ============================================================
+# Atlas migration snapshot overrides
+# ============================================================
+
+# The live Atlas persistent database is part of the migration state.
+# Override the global *.db rule for this specific database.
+!.ai/
+!.ai/memory/
+!.ai/memory/db/
+!.ai/memory/db/atlas.db
+
+# Preserve migration runtime capture in the migration snapshot.
+!migration/
+!migration/runtime/
+!migration/runtime/processes/
+!migration/runtime/environment/
+
+# Never include nested Git metadata from copied external repositories.
+migration/**/.git/

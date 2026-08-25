@@ -1,0 +1,23 @@
+NEXT                            LEFT LAST                             PASSED UNIT                           ACTIVATES
+Tue 2026-08-25 07:22:21 UTC      48s Tue 2026-08-25 07:21:21 UTC     11s ago llama-health.timer             llama-health.service
+Tue 2026-08-25 07:30:00 UTC     8min Tue 2026-08-25 07:20:26 UTC 1min 6s ago sysstat-collect.timer          sysstat-collect.service
+Tue 2026-08-25 08:08:01 UTC    46min Tue 2026-08-25 07:04:31 UTC   17min ago fwupd-refresh.timer            fwupd-refresh.service
+Tue 2026-08-25 09:48:32 UTC 2h 26min Mon 2026-08-24 15:55:59 UTC     15h ago motd-news.timer                motd-news.service
+Tue 2026-08-25 10:22:56 UTC  3h 1min Mon 2026-08-24 10:22:56 UTC     20h ago update-notifier-download.timer update-notifier-download.service
+Tue 2026-08-25 10:32:51 UTC 3h 11min Mon 2026-08-24 10:32:51 UTC     20h ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Tue 2026-08-25 11:05:08 UTC 3h 43min Mon 2026-08-24 14:29:31 UTC     16h ago man-db.timer                   man-db.service
+Tue 2026-08-25 17:15:04 UTC       9h Mon 2026-08-24 18:27:56 UTC     12h ago apt-daily.timer                apt-daily.service
+Wed 2026-08-26 00:00:00 UTC      16h Tue 2026-08-25 00:00:21 UTC      7h ago dpkg-db-backup.timer           dpkg-db-backup.service
+Wed 2026-08-26 00:00:00 UTC      16h Tue 2026-08-25 00:00:21 UTC      7h ago sysstat-rotate.timer           sysstat-rotate.service
+Wed 2026-08-26 00:07:00 UTC      16h Tue 2026-08-25 00:07:31 UTC      7h ago sysstat-summary.timer          sysstat-summary.service
+Wed 2026-08-26 00:50:25 UTC      17h Tue 2026-08-25 00:38:59 UTC      6h ago logrotate.timer                logrotate.service
+Wed 2026-08-26 04:21:20 UTC      20h Wed 2026-08-12 06:09:40 UTC           - update-notifier-motd.timer     update-notifier-motd.service
+Wed 2026-08-26 06:38:21 UTC      23h Tue 2026-08-25 06:35:26 UTC   46min ago apt-daily-upgrade.timer        apt-daily-upgrade.service
+Sun 2026-08-30 03:10:29 UTC   4 days Mon 2026-08-24 10:17:46 UTC     21h ago xfs_scrub_all.timer            xfs_scrub_all.service
+Sun 2026-08-30 03:10:30 UTC   4 days Mon 2026-08-24 10:18:29 UTC     21h ago e2scrub_all.timer              e2scrub_all.service
+Mon 2026-08-31 01:23:32 UTC   5 days Mon 2026-08-24 11:32:31 UTC     19h ago fstrim.timer                   fstrim.service
+-                                  - -                                     - apport-autoreport.timer        apport-autoreport.service
+-                                  - -                                     - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                  - -                                     - ua-timer.timer                 ua-timer.service
+
+20 timers listed.

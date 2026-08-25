@@ -1,0 +1,14 @@
+● llama-agent.service - Qwen3 Agent Server
+     Loaded: loaded (/etc/systemd/system/llama-agent.service; enabled; preset: enabled)
+    Drop-In: /etc/systemd/system/llama-agent.service.d
+             └─override.conf
+     Active: active (running) since Mon 2026-08-24 10:17:46 UTC; 21h ago
+ Invocation: e8915df8a0b24a1fbe0334f71411f922
+   Main PID: 1919 (llama-server)
+      Tasks: 66 (limit: 142462)
+     Memory: 31.8G (peak: 31.8G)
+        CPU: 1h 34min 39.468s
+     CGroup: /system.slice/llama-agent.service
+             └─1919 /opt/llama.cpp/build/bin/llama-server --model /opt/models/qwen3-coder-30b-a3b-instruct-q4_k_m.gguf --host 0.0.0.0 --port 8002 --ctx-size 16384 --threads 32 --threads-batch 32 --parallel 1 --batch-size 2048 --ubatch-size 512 --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn on --numa distribute --mlock --metrics --slots --cache-prompt --cont-batching --poll 0 --prio 2 --reasoning auto --reasoning-preserve --agent
+
+Aug 24 10:17:46 llama systemd[1]: Started llama-agent.service - Qwen3 Agent Server.

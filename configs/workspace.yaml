@@ -1,0 +1,31 @@
+workspace:
+
+  name: Atlas
+
+  root: /home/administrator/workspace/atlas
+
+  knowledge:
+
+    agents: .ai/agents
+    prompts: .ai/prompts
+    memory: .ai/memory
+    workflows: .ai/workflows
+    rules: .ai/rules
+
+  documentation:
+
+    engineering: docs/engineering
+
+  source:
+
+    code: src
+    tests: tests
+    packages: packages
+
+  git:
+
+    branch: master
+
+  ai:
+
+    instructions: AGENTS.md

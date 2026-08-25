@@ -1,0 +1,9 @@
+[Unit]
+Description=Run llama health checks
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=60
+
+[Install]
+WantedBy=timers.target

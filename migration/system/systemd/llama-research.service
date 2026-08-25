@@ -1,0 +1,19 @@
+[Unit]
+Description=Qwen2.5 32B Research Server
+After=network-online.target
+
+[Service]
+Type=simple
+User=llama
+Group=llama
+ExecStart=/opt/scripts/start-research.sh
+Restart=always
+RestartSec=5
+LimitNOFILE=65535
+WorkingDirectory=/opt/llama.cpp
+StandardOutput=append:/var/log/llama/research.log
+StandardError=append:/var/log/llama/research.log
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target

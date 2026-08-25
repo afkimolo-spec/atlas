@@ -1,0 +1,6 @@
+[Unit]
+Description=Llama Health Check
+
+[Service]
+Type=oneshot
+ExecStart=/opt/scripts/check-llama.sh

@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euo pipefail
+
+exec /opt/llama.cpp/build/bin/llama-server \
+    --model /opt/models/qwen3-coder-30b-a3b-instruct-q4_k_m.gguf \
+    --host 0.0.0.0 \
+    --port 8002 \
+    --ctx-size 16384 \
+    --threads 32 \
+    --threads-batch 32 \
+    --parallel 1 \
+    --batch-size 2048 \
+    --ubatch-size 512 \
+    --cache-type-k q8_0 \
+    --cache-type-v q8_0 \
+    --flash-attn on \
+    --numa distribute \
+    --mlock \
+    --metrics \
+    --slots \
+    --cache-prompt \
+    --cont-batching \
+    --poll 0 \
+    --prio 2 \
+    --reasoning auto \
+    --reasoning-preserve \
+    --agent

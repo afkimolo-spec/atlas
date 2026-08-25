@@ -1,0 +1,13 @@
+○ llama-health.service - Llama Health Check
+     Loaded: loaded (/etc/systemd/system/llama-health.service; static)
+     Active: inactive (dead) since Tue 2026-08-25 07:21:21 UTC; 9s ago
+ Invocation: b1ef27e0efe74416959113ea0054d97b
+TriggeredBy: ● llama-health.timer
+    Process: 21040 ExecStart=/opt/scripts/check-llama.sh (code=exited, status=0/SUCCESS)
+   Main PID: 21040 (code=exited, status=0/SUCCESS)
+   Mem peak: 3.6M
+        CPU: 39ms
+
+Aug 25 07:21:21 llama systemd[1]: Starting llama-health.service - Llama Health Check...
+Aug 25 07:21:21 llama systemd[1]: llama-health.service: Deactivated successfully.
+Aug 25 07:21:21 llama systemd[1]: Finished llama-health.service - Llama Health Check.

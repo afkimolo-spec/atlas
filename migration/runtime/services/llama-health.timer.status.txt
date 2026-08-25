@@ -1,0 +1,8 @@
+● llama-health.timer - Run llama health checks
+     Loaded: loaded (/etc/systemd/system/llama-health.timer; enabled; preset: enabled)
+     Active: active (waiting) since Mon 2026-08-24 10:17:46 UTC; 21h ago
+ Invocation: 84078bfaf7504bef83f3ecab545bd08b
+    Trigger: Tue 2026-08-25 07:22:21 UTC; 50s left
+   Triggers: ● llama-health.service
+
+Aug 24 10:17:46 llama systemd[1]: Started llama-health.timer - Run llama health checks.

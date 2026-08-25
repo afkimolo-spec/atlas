@@ -1,0 +1,24 @@
+# /etc/systemd/system/llama-agent.service
+[Unit]
+Description=Qwen3 Agent Server
+After=network-online.target
+
+[Service]
+Type=simple
+User=llama
+Group=llama
+ExecStart=/opt/scripts/start-agent.sh
+Restart=always
+RestartSec=5
+LimitNOFILE=65535
+WorkingDirectory=/opt/llama.cpp
+StandardOutput=append:/var/log/llama/agent.log
+StandardError=append:/var/log/llama/agent.log
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/systemd/system/llama-agent.service.d/override.conf
+[Service]
+LimitMEMLOCK=infinity

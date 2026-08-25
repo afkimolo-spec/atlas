@@ -1,0 +1,6 @@
+.gitattributes	1587 bytes
+nomic-embed-text-v1.5-Q8_0.gguf	146146432 bytes
+qwen2.5-coder-32b-instruct-q2_k.gguf	12313098432 bytes
+qwen2.5-coder-7b-instruct-q8_0.gguf	8098525184 bytes
+qwen3-coder-30b-a3b-instruct-q4_k_m.gguf	18556688704 bytes
+README.md	52 bytes

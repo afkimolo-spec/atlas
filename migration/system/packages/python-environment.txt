@@ -1,0 +1,52 @@
+=== PYTHON ===
+/home/administrator/workspace/atlas/.venv/bin/python
+Python 3.14.4
+
+=== UV ===
+/home/administrator/.local/bin/uv
+uv 0.11.28 (x86_64-unknown-linux-gnu)
+
+=== PYTHON PACKAGES ===
+
+=== UV TREE ===
+atlas v0.1.0
+├── gitpython v3.1.51
+│   └── gitdb v4.0.12
+│       └── smmap v5.0.3
+├── httpx v0.28.1
+│   ├── anyio v4.14.2
+│   │   └── idna v3.18
+│   ├── certifi v2026.6.17
+│   ├── httpcore v1.0.9
+│   │   ├── certifi v2026.6.17
+│   │   └── h11 v0.16.0
+│   └── idna v3.18
+├── jinja2 v3.1.6
+│   └── markupsafe v3.0.3
+├── networkx v3.6.1
+├── numpy v2.5.1
+├── orjson v3.11.9
+├── platformdirs v4.10.0
+├── pydantic v2.13.4
+│   ├── annotated-types v0.7.0
+│   ├── pydantic-core v2.46.4
+│   │   └── typing-extensions v4.16.0
+│   ├── typing-extensions v4.16.0
+│   └── typing-inspection v0.4.2
+│       └── typing-extensions v4.16.0
+├── pydantic-settings v2.14.2
+│   ├── pydantic v2.13.4 (*)
+│   ├── python-dotenv v1.2.2
+│   └── typing-inspection v0.4.2 (*)
+├── python-dotenv v1.2.2
+├── pyyaml v6.0.3
+├── rich v15.0.0
+│   ├── markdown-it-py v4.2.0
+│   │   └── mdurl v0.1.2
+│   └── pygments v2.20.0
+├── typer v0.26.8
+│   ├── annotated-doc v0.0.4
+│   ├── rich v15.0.0 (*)
+│   └── shellingham v1.5.4
+└── watchdog v6.0.0
+(*) Package tree already displayed

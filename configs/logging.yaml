@@ -1,0 +1,13 @@
+logging:
+
+  level: INFO
+
+  files:
+
+    engineering: logs/engineering.log
+
+    research: logs/research.log
+
+    completion: logs/completion.log
+
+    atlas: logs/atlas.log

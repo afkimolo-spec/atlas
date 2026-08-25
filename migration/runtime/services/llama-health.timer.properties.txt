@@ -1,0 +1,6 @@
+Id=llama-health.timer
+WantedBy=timers.target
+LoadState=loaded
+ActiveState=active
+SubState=waiting
+FragmentPath=/etc/systemd/system/llama-health.timer

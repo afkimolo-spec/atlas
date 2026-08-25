@@ -1,0 +1,7 @@
+# /etc/systemd/system/llama-health.service
+[Unit]
+Description=Llama Health Check
+
+[Service]
+Type=oneshot
+ExecStart=/opt/scripts/check-llama.sh

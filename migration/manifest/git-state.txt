@@ -1,0 +1,60 @@
+=== REMOTE ===
+
+=== BRANCH ===
+main
+
+=== STATUS ===
+## main
+?? .ai/memory/
+?? .opencode.json
+?? configs/
+?? docs/engineering/
+?? migration/
+?? pyproject.toml
+?? scripts/test_agent_context.py
+?? scripts/test_agent_runtime.py
+?? scripts/test_agents.py
+?? scripts/test_atlas_client.py
+?? scripts/test_autonomous_execution.py
+?? scripts/test_autonomous_plan.py
+?? scripts/test_autonomous_recovery.py
+?? scripts/test_autonomous_recovery_integration.py
+?? scripts/test_client.py
+?? scripts/test_command.py
+?? scripts/test_command_timeout.py
+?? scripts/test_context.py
+?? scripts/test_crash_recovery.py
+?? scripts/test_execution.py
+?? scripts/test_execution_persistence.py
+?? scripts/test_execution_restore.py
+?? scripts/test_execution_retry.py
+?? scripts/test_execution_store.py
+?? scripts/test_feedback_observability.py
+?? scripts/test_history.py
+?? scripts/test_index.py
+?? scripts/test_knowledge.py
+?? scripts/test_loader.py
+?? scripts/test_logger.py
+?? scripts/test_persistent_memory.py
+?? scripts/test_pipeline.py
+?? scripts/test_plan_execution.py
+?? scripts/test_planner.py
+?? scripts/test_planner_workflow.py
+?? scripts/test_recovery.py
+?? scripts/test_recovery_exhaustion.py
+?? scripts/test_resource_manager.py
+?? scripts/test_resource_persistence.py
+?? scripts/test_router.py
+?? scripts/test_session.py
+?? scripts/test_session_persistence.py
+?? scripts/test_vector.py
+?? scripts/test_workflow.py
+?? scripts/test_workspace.py
+?? src/
+?? tools/
+?? uv.lock
+
+=== LOG ===
+35f0074 (HEAD -> main) Initial Atlas AI engineering workspace
+
+=== TAGS ===

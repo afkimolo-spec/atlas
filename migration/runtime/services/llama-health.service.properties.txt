@@ -1,0 +1,12 @@
+Id=llama-health.service
+WantedBy=
+LoadState=loaded
+ActiveState=inactive
+SubState=dead
+FragmentPath=/etc/systemd/system/llama-health.service
+Restart=no
+ExecStart={ path=/opt/scripts/check-llama.sh ; argv[]=/opt/scripts/check-llama.sh ; ignore_errors=no ; start_time=[Tue 2026-08-25 07:21:21 UTC] ; stop_time=[Tue 2026-08-25 07:21:21 UTC] ; pid=21040 ; code=exited ; status=0 }
+Environment=
+WorkingDirectory=
+User=
+Group=
