@@ -1,4 +1,7 @@
 from __future__ import annotations
+from atlas.paths import ROOT
+
+import os
 
 import json
 import sqlite3
@@ -6,7 +9,6 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 
-ROOT = Path("/home/administrator/workspace/atlas")
 DATABASE = ROOT / ".ai" / "memory" / "db" / "atlas.db"
 
 

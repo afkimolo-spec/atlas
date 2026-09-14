@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atlas Control Plane</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family:
+                Inter, system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            border-bottom: 1px solid #30363d;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                minmax(320px, 1fr)
+                minmax(320px, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #8b949e;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            border-radius: 7px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+            color: #e6edf3;
+            padding: 10px 12px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        button {
+            cursor: pointer;
+            background: #238636;
+            border-color: #238636;
+            font-weight: 600;
+        }
+
+        button.secondary {
+            background: #21262d;
+            border-color: #30363d;
+        }
+
+        button.danger {
+            background: #da3633;
+            border-color: #da3633;
+        }
+
+        button:hover {
+            filter: brightness(1.1);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .status {
+            padding: 10px 12px;
+            border-radius: 7px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            font-family: "JetBrains Mono", Consolas, monospace;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: #21262d;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .health {
+            color: #3fb950;
+        }
+
+        .error {
+            color: #f85149;
+        }
+
+        @media (max-width: 900px) {
+            .grid,
+            .row,
+            .actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Atlas Control Plane</h1>
+    <span id="health" class="pill">checking...</span>
+</header>
+
+<main>
+    <div class="grid">
+        <section class="card">
+            <h2>Authentication</h2>
+
+            <label for="username">Username</label>
+            <input id="username" value="admin" autocomplete="username">
+
+            <label for="password" style="margin-top:12px">
+                Password
+            </label>
+            <input
+                id="password"
+                type="password"
+                autocomplete="current-password"
+            >
+
+            <div class="actions">
+                <button onclick="checkHealth()">Health</button>
+                <button class="secondary" onclick="clearOutput()">
+                    Clear
+                </button>
+                <button class="secondary" onclick="loadTelemetry()">
+                    Refresh
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Task Submission</h2>
+
+            <label for="task">Engineering Task</label>
+            <textarea id="task">Verify Atlas control-plane execution.</textarea>
+
+            <div class="actions">
+                <button onclick="createPlan()">Plan</button>
+                <button onclick="executeTask()">Execute</button>
+                <button class="secondary" onclick="checkStatus()">
+                    Status
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Execution</h2>
+
+            <label for="executionId">Execution ID</label>
+            <input id="executionId" placeholder="execution id">
+
+            <label for="traceId" style="margin-top:12px">
+                Trace ID
+            </label>
+            <input id="traceId" placeholder="trace id">
+
+            <div class="actions">
+                <button onclick="resumeExecution()">Resume</button>
+                <button class="secondary" onclick="loadFeedback()">
+                    Feedback
+                </button>
+                <button class="secondary" onclick="loadTelemetry()">
+                    Telemetry
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Workflow Stages</h2>
+
+            <div class="row">
+                <label>
+                    <input id="research" type="checkbox">
+                    Research
+                </label>
+
+                <label>
+                    <input id="architecture" type="checkbox" checked>
+                    Architecture
+                </label>
+
+                <label>
+                    <input id="development" type="checkbox" checked>
+                    Development
+                </label>
+
+                <label>
+                    <input id="review" type="checkbox" checked>
+                    Review
+                </label>
+
+                <label>
+                    <input id="operations" type="checkbox" checked>
+                    Operations
+                </label>
+            </div>
+        </section>
+
+        <section class="card full">
+            <h2>Control Output</h2>
+            <div id="output" class="status">
+Ready.
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+const output = document.getElementById("output");
+
+function credentials() {
+    return {
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
+    };
+}
+
+function taskOptions() {
+    return {
+        research: document.getElementById("research").checked,
+        architecture: document.getElementById("architecture").checked,
+        development: document.getElementById("development").checked,
+        review: document.getElementById("review").checked,
+        operations: document.getElementById("operations").checked
+    };
+}
+
+function show(data) {
+    output.textContent = JSON.stringify(data, null, 2);
+}
+
+function showError(error) {
+    output.textContent = "ERROR\n\n" + error;
+    output.className = "status error";
+}
+
+function clearOutput() {
+    output.textContent = "Ready.";
+    output.className = "status";
+}
+
+async function request(path, payload) {
+    const response = await fetch(path, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(
+            data.detail || JSON.stringify(data)
+        );
+    }
+
+    return data;
+}
+
+async function checkHealth() {
+    try {
+        const response = await fetch("/health");
+        const data = await response.json();
+
+        document.getElementById("health").textContent =
+            data.status;
+
+        document.getElementById("health").className =
+            data.status === "healthy"
+                ? "pill health"
+                : "pill error";
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+async function createPlan() {
+    try {
+        const data = await request(
+            "/v1/plan",
+            {
+                ...credentials(),
+                task: document.getElementById("task").value,
+                ...taskOptions()
+            }
+        );
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+async function executeTask() {
+    try {
+        const data = await request(
+            "/v1/executions",
+            {
+                ...credentials(),
+                task: document.getElementById("task").value,
+                ...taskOptions()
+            }
+        );
+
+        if (data.session_id) {
+            document.getElementById("executionId").value =
+                data.session_id;
+        }
+
+        if (data.trace_id) {
+            document.getElementById("traceId").value =
+                data.trace_id;
+        }
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+async function checkStatus() {
+    try {
+        const executionId =
+            document.getElementById("executionId").value;
+
+        const data = await request(
+            "/v1/executions/status",
+            {
+                ...credentials(),
+                execution_id: executionId
+            }
+        );
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+async function resumeExecution() {
+    try {
+        const data = await request(
+            "/v1/executions/resume",
+            {
+                ...credentials(),
+                task: document.getElementById("task").value,
+                execution_id:
+                    document.getElementById("executionId").value,
+                ...taskOptions()
+            }
+        );
+
+        if (data.trace_id) {
+            document.getElementById("traceId").value =
+                data.trace_id;
+        }
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+async function loadFeedback() {
+    try {
+        const executionId =
+            document.getElementById("executionId").value;
+
+        const data = await request(
+            "/v1/feedback",
+            {
+                ...credentials(),
+                execution_id: executionId
+            }
+        );
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+async function loadTelemetry() {
+    try {
+        const data = await request(
+            "/v1/telemetry",
+            {
+                ...credentials(),
+                trace_id:
+                    document.getElementById("traceId").value
+            }
+        );
+
+        show(data);
+    } catch (error) {
+        showError(error.message);
+    }
+}
+
+checkHealth();
+</script>
+</body>
+</html>

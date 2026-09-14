@@ -1,4 +1,8 @@
 from __future__ import annotations
+from atlas.paths import ROOT
+LOG_ROOT = ROOT / "logs"
+
+import os
 
 import logging
 from pathlib import Path
@@ -7,7 +11,6 @@ from atlas.config.loader import load_logging
 
 _config = load_logging()
 
-LOG_ROOT = Path("/home/administrator/workspace/atlas")
 
 
 def get_logger(name: str) -> logging.Logger:

@@ -9,9 +9,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from atlas.planning import TaskPlan, TaskStage
-
-
-ROOT = Path(__file__).resolve().parents[3]
+from atlas.paths import ROOT
 DATABASE = ROOT / ".ai" / "memory" / "db" / "atlas.db"
 
 

@@ -1,9 +1,18 @@
+from atlas.paths import ROOT
+
+import os
+from pathlib import Path
+
+
+
+from pathlib import Path
+
+
 from pathlib import Path
 
 from pydantic import BaseModel
 
 
-ROOT = Path("/home/administrator/workspace/atlas")
 CONFIG = ROOT / "configs"
 
 

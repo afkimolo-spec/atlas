@@ -1,4 +1,7 @@
 from __future__ import annotations
+from atlas.paths import ROOT
+
+import os
 
 import json
 import sqlite3
@@ -16,7 +19,6 @@ from atlas.core.execution import (
 from atlas.planning import TaskPlan
 
 
-ROOT = Path("/home/administrator/workspace/atlas")
 DATABASE = ROOT / ".ai" / "memory" / "db" / "atlas.db"
 
 
